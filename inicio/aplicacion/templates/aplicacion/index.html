@@ -1,0 +1,71 @@
+{% comment %} <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>ACA ESTA EL TITULO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+  <p>Esta es mi primera aplicacion y se nota</p>
+  <h1>Familiares</h1>
+  <table>
+    <thead>
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td>Nacimiento</td>
+        <td>Edad</td>
+        <td>Email</td>
+    </thead> 
+    {% for familiar in Familiares %}
+    {{familiar.nombre}}
+    {%endfor%}
+  </table>
+</body>
+</html> {% endcomment %}
+
+<!-- Write HTML code here -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title> Mi primera app!</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+<h2 class="text-center"><u>La app que cargas datita familiar</u></h2><br>			
+<table class="table table-dark table-striped">
+	<thead>
+	<tr>
+		<th>Nombre</th>
+		<th>Apellido</th>
+		<th>Nacimiento</th>
+		<th>Email</th>
+	</tr>
+	</thead>
+	<tbody>
+	<!-- jinja2 Technique -->
+	{% if familiares %}
+	{% for familiar in familiares %}
+	<tr>
+		<td>{{familiar.nombre}}</td>
+		<td>{{familiar.apellido}}</td>
+		<td>{{familiar.nacimiento}}</td>
+		<td>{{familiar.email}}</td>
+		<td>{{i.Profit}}</td>
+	</tr>
+	{% endfor %}
+	{% endif %}
+	</tbody>
+</table>
+</div>
+
+</body>
+</html>
